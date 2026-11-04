@@ -1,0 +1,16 @@
+# ============================================================
+# OpenWRT-AX1800Pro 私有配置 (PRIVATE.txt)
+# 构建时由 Scripts/Settings.sh 追加进 .config（位于 GENERAL.txt 之后）
+# 因此这里的 =n 会覆盖 GENERAL.txt 中的 =y（Kconfig 取最后出现的值）
+# ============================================================
+
+# ---------- 禁用 samba4（覆盖 GENERAL.txt 的内容）----------
+CONFIG_PACKAGE_luci-app-samba4=n
+CONFIG_PACKAGE_samba4=n
+CONFIG_PACKAGE_luci-app-dockerman=n
+CONFIG_PACKAGE_luci-app-tailscale=y
+CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_luci-app-bandix=y
+
+# ---------- 如需禁用 / 追加其它包，按相同格式继续写 ----------
+# CONFIG_PACKAGE_xxx=n
