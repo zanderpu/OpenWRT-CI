@@ -4,12 +4,16 @@
 # 因此这里的 =n 会覆盖 GENERAL.txt 中的 =y（Kconfig 取最后出现的值）
 # ============================================================
 
-# ---------- 禁用 samba4（覆盖 GENERAL.txt 的内容）----------
+# ---------- 如需禁用 / 追加其它包，按相同格式继续写 ----------
+# CONFIG_PACKAGE_xxx=n
+
+
+# ---------- 禁用 samba4、dockerman ----------
 CONFIG_PACKAGE_luci-app-samba4=n
 CONFIG_PACKAGE_samba4=n
 CONFIG_PACKAGE_luci-app-dockerman=n
+
+# ---------- 添加新 ----------
 CONFIG_PACKAGE_luci-app-ddns-go=y
 CONFIG_PACKAGE_luci-app-bandix=y
-
-# ---------- 如需禁用 / 追加其它包，按相同格式继续写 ----------
-# CONFIG_PACKAGE_xxx=n
+CONFIG_PACKAGE_luci-theme-vantage=y

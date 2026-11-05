@@ -15,6 +15,7 @@ find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js" -exec se
 WIFI_UC="./package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc"
 ROUTER_TOOL="./package/emortal/luci-app-router-tool/root/etc/config/router-tool"
 for file in "$ROUTER_TOOL" "$WIFI_UC"; do
+	# [ -f "$file" ] && sed -i "s/ssid '.*'/ssid '$WRT_SSID'/g; s/key '.*'/key '$WRT_WORD'/g" "$file"
 	[ -f "$file" ] && sed -i "s/key '.*'/key '$WRT_WORD'/g" "$file"
 done
 
